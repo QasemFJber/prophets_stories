@@ -1,16 +1,26 @@
-# prophets_stories
+# تطبيق ذكر وهدي
 
-A new Flutter project.
+## نبذة عامة
+"ذكر وهدي" هو تطبيق إسلامي مفتوح المصدر يهدف إلى تقديم قصص الأنبياء والأحاديث النبوية والأذكار اليومية في واجهة سهلة الاستخدام.
 
-## Getting Started
+## الميزات
+- قصص ملهمة للأنبياء مع تفاصيل دقيقة.
+- مجموعة متنوعة من الأحاديث النبوية الصحيحة والمأثورة.
+- أذكار يومية لتعزيز الروحانية.
+- واجهة بسيطة ومستخدمة سهلة لتجربة فعّالة.
 
-This project is a starting point for a Flutter application.
+## كيفية المساهمة
+1. قم بعمل Fork لهذا المستودع.
+2. قم بإجراء التغييرات والتحسينات.
+3. قم بعمل Pull Request لدمج تغييراتك.
 
-A few resources to get you started if this is your first Flutter project:
+## كيفية تشغيل التطبيق
+1. قم بتثبيت [التبعيات اللازمة مثل ...].
+2. قم بتنفيذ [الأوامر اللازمة مثل ...].
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## الاعتمادات
+- تصميم الرموز: [مثال على مكتبة الرموز التي تستخدمها إذا كان هناك].
+- استنادًا إلى [إشارة إلى المشروع أو المصدر الأساسي إذا كان هناك].
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## الترخيص
+هذا المشروع مُرخّص بموجب رخصة [نوع الترخيص].
