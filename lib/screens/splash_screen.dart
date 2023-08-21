@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -12,16 +13,22 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(seconds: 3),() {
-      Navigator.pushNamedAndRemoveUntil(context, '/login_screen', (route) => false);
+    Future.delayed(Duration(seconds: 5),() {
+      Navigator.pushNamedAndRemoveUntil(context, '/page_view_screen', (route) => false);
     },);
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff4A2C40),
+      backgroundColor: Colors.teal,
       body: Center(
-        child: Image.asset('lib/assets/images/logo.png'),
+        child: Column(
+          children: [
+            Lottie.asset('lib/assets/animation/p]de.json'),
+            Text('مرحبا بكم في تطبيق ذكر و هدي',style: TextStyle(color: Colors.white,fontSize: 22,fontWeight: FontWeight.bold),),
+          ],
+        ),
+
       ),
     );
   }
