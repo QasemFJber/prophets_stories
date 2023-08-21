@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:flutter_youtube/flutter_youtube.dart';
 
 class TutorialScreen extends StatefulWidget {
   const TutorialScreen({super.key});
@@ -19,7 +20,35 @@ class _TutorialScreenState extends State<TutorialScreen> {
         ),
         centerTitle: true,
       ),
-
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            width: double.infinity,
+            height: 200, // ارتفاع مقطع الفيديو
+            // child: FlutterYoutube.playYoutubeVideoByUrl(
+            //   apiKey: "YOUR_YOUTUBE_API_KEY",
+            //   videoUrl: "https://www.youtube.com/watch?v=VIDEO_ID",
+            //   autoPlay: false, // تشغيل تلقائي
+            //   fullScreen: false, // عدم عرض بملء الشاشة
+            // ),
+          ),
+          SizedBox(height: 16),
+          Text(
+            'عنوان الدرس',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: 8),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              'ملخص عام عن الدرس',
+              style: TextStyle(fontSize: 16),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
