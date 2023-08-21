@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 100,),
+            SizedBox(height: 150,),
             Lottie.asset('lib/assets/animation/p]de.json'),
             Text('مرحبا بكم في تطبيق ذكر و هدي',style: TextStyle(color: Colors.white,fontSize: 22,fontWeight: FontWeight.bold),),
           ],
