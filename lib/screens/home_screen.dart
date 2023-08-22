@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:lottie/lottie.dart';
 
+
 class HomeScreen extends StatelessWidget {
+  final _drawerController = ZoomDrawerController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,15 +16,101 @@ class HomeScreen extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            _drawerController.toggle!();
+          },
+        ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              child: Row(
-                children: [
-                  Expanded(
+      body: ZoomDrawer(
+        controller: _drawerController,
+        menuScreen: buildMenu(context),
+        mainScreen: buildMainScreen(context),
+        borderRadius: 24.0,
+        showShadow: true,
+        angle: -12.0,
+        slideWidth: MediaQuery.of(context).size.width * 0.33,
+      ),
+    );
+  }
+
+  Widget buildMenu(BuildContext context) {
+    return ListView(
+      padding: EdgeInsets.zero,
+      children: <Widget>[
+        UserAccountsDrawerHeader(
+          accountName: Text('قاسم عابد'),
+          accountEmail: Text('QasemJber@gmail.com'),
+          currentAccountPicture: CircleAvatar(
+            backgroundImage: AssetImage('lib/assets/images/logo.png'),
+          ),
+          decoration: BoxDecoration(
+            color: Colors.teal, // تعيين لون الخلفية إلى اللون المطلوب
+          ),
+        ),
+        buildMenuItem(
+          context,
+          icon: Icons.home,
+          title: 'الصفحة الرئيسية',
+          routeName: '/',
+        ),
+        buildMenuItem(
+          context,
+          icon: Icons.message,
+          title: 'الرسائل',
+          routeName: '/messages',
+        ),
+        buildMenuItem(
+          context,
+          icon: Icons.star,
+          title: 'المفضلة',
+          routeName: '/favorites',
+        ),
+        buildMenuItem(
+          context,
+          icon: Icons.settings,
+          title: 'الإعدادات',
+          routeName: '/settings',
+        ),
+        buildMenuItem(
+          context,
+          icon: Icons.exit_to_app,
+          title: 'تسجيل الخروج',
+          routeName: '/logout',
+        ),
+      ],
+    );
+  }
+
+  Widget buildMenuItem(BuildContext context,
+      {required IconData icon, required String title, required String routeName}) {
+    return Column(
+      children: [
+        ListTile(
+          leading: Icon(icon),
+          title: Text(title),
+          onTap: () {
+            _drawerController.toggle!();
+            // تنفيذ الانتقال للصفحة المحددة بواسطة routeName
+          },
+        ),
+        Divider(),
+      ],
+    );
+  }
+
+  Widget buildMainScreen(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: Column(
+        children: <Widget>[
+          Expanded(
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: Expanded(
                     child: _buildCard(
                       context,
                       Color(0xFFE57373),
@@ -30,8 +120,11 @@ class HomeScreen extends StatelessWidget {
                       '/conversation_screen',
                     ),
                   ),
-                  SizedBox(width: 16), // مسافة بين البطاقات
-                  Expanded(
+                ),
+                SizedBox(width: 16), // مسافة بين البطاقات
+                Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: Expanded(
                     child: _buildCard(
                       context,
                       Color(0xFF81C784),
@@ -41,14 +134,17 @@ class HomeScreen extends StatelessWidget {
                       '/stories_screen',
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-            SizedBox(height: 16), // مسافة بين الصفوف
-            Expanded(
-              child: Row(
-                children: [
-                  Expanded(
+          ),
+          SizedBox(height: 16), // مسافة بين الصفوف
+          Expanded(
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: Expanded(
                     child: _buildCard(
                       context,
                       Color(0xFF64B5F6),
@@ -58,8 +154,11 @@ class HomeScreen extends StatelessWidget {
                       '/tutorials_screen',
                     ),
                   ),
-                  SizedBox(width: 16), // مسافة بين البطاقات
-                  Expanded(
+                ),
+                SizedBox(width: 16), // مسافة بين البطاقات
+                Padding(
+                  padding: const EdgeInsets.all(5),
+                  child: Expanded(
                     child: _buildCard(
                       context,
                       Color(0xFFFFD54F),
@@ -69,11 +168,11 @@ class HomeScreen extends StatelessWidget {
                       '/remembrance_screen',
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
