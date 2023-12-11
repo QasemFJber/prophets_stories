@@ -1,6 +1,4 @@
-import 'dart:io';
-
-class Read{
+class Read {
   String _title;
   String _body;
 

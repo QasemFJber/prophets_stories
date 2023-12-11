@@ -14,16 +14,16 @@ class _TutorialScreenState extends State<TutorialScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: Text(
+        title: const Text(
           'الدروس التعليمية',
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
       ),
-      body: Column(
+      body: const Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
+          SizedBox(
             width: double.infinity,
             height: 200, // ارتفاع مقطع الفيديو
             // child: FlutterYoutube.playYoutubeVideoByUrl(
@@ -40,7 +40,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
           ),
           SizedBox(height: 8),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: EdgeInsets.symmetric(horizontal: 16),
             child: Text(
               'ملخص عام عن الدرس',
               style: TextStyle(fontSize: 16),
