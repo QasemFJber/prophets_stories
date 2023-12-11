@@ -11,12 +11,16 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(seconds: 5),() {
-      Navigator.pushNamedAndRemoveUntil(context, '/page_view_screen', (route) => false);
-    },);
+    Future.delayed(
+      const Duration(seconds: 5),
+      () {
+        Navigator.pushNamedAndRemoveUntil(
+            context, '/page_view_screen', (route) => false);
+      },
+    );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,12 +28,19 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 150,),
+            const SizedBox(
+              height: 150,
+            ),
             Lottie.asset('lib/assets/animation/p]de.json'),
-            Text('مرحبا بكم في تطبيق ذكر و هدي',style: TextStyle(color: Colors.white,fontSize: 22,fontWeight: FontWeight.bold),),
+            const Text(
+              'مرحبا بكم في تطبيق ذكر و هدي',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold),
+            ),
           ],
         ),
-
       ),
     );
   }

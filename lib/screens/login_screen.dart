@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff4A2C40),
+      backgroundColor: const Color(0xff4A2C40),
       body: Center(
         child: Container(
-          padding: EdgeInsets.all(30.0),
+          padding: const EdgeInsets.all(30.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -17,8 +19,8 @@ class LoginScreen extends StatelessWidget {
                 width: 200,
                 height: 200,
               ),
-              SizedBox(height: 30.0),
-              Text(
+              const SizedBox(height: 30.0),
+              const Text(
                 'Welcome!',
                 style: TextStyle(
                   color: Colors.white,
@@ -27,8 +29,8 @@ class LoginScreen extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 30.0),
-              TextField(
+              const SizedBox(height: 30.0),
+              const TextField(
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
@@ -36,8 +38,8 @@ class LoginScreen extends StatelessWidget {
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 15.0),
-              TextField(
+              const SizedBox(height: 15.0),
+              const TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   filled: true,
@@ -46,15 +48,15 @@ class LoginScreen extends StatelessWidget {
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 30.0),
+              const SizedBox(height: 30.0),
               ElevatedButton(
                 onPressed: () {
                   // Add your login logic here
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.amber,
+                  backgroundColor: Colors.amber,
                 ),
-                child: Text('Login'),
+                child: const Text('Login'),
               ),
             ],
           ),

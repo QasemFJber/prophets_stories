@@ -23,13 +23,12 @@ class _RemembranceScreenState extends State<RemembranceScreen> {
     Read('لَا إِلٰهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ', 'محتوى الذكر'),
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: Text(
+        title: const Text(
           'الأذكار الاسلامية',
           style: TextStyle(color: Colors.white),
         ),
@@ -53,7 +52,7 @@ class _RemembranceScreenState extends State<RemembranceScreen> {
         );
       },
       child: Card(
-        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
@@ -64,13 +63,14 @@ class _RemembranceScreenState extends State<RemembranceScreen> {
             children: [
               Text(
                 dhikr.title,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
                 dhikr.body,
-                style: TextStyle(fontSize: 16),
+                style: const TextStyle(fontSize: 16),
                 textAlign: TextAlign.center,
               ),
             ],

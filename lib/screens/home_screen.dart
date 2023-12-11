@@ -2,22 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:lottie/lottie.dart';
 
-
 class HomeScreen extends StatelessWidget {
   final _drawerController = ZoomDrawerController();
+
+  HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: Text(
+        title: const Text(
           'الشاشة الرئيسية',
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.menu),
+          icon: const Icon(Icons.menu),
           onPressed: () {
             _drawerController.toggle!();
           },
@@ -39,7 +40,7 @@ class HomeScreen extends StatelessWidget {
     return ListView(
       padding: EdgeInsets.zero,
       children: <Widget>[
-        UserAccountsDrawerHeader(
+        const UserAccountsDrawerHeader(
           accountName: Text('قاسم عابد'),
           accountEmail: Text('QasemJber@gmail.com'),
           currentAccountPicture: CircleAvatar(
@@ -84,7 +85,9 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget buildMenuItem(BuildContext context,
-      {required IconData icon, required String title, required String routeName}) {
+      {required IconData icon,
+      required String title,
+      required String routeName}) {
     return Column(
       children: [
         ListTile(
@@ -95,7 +98,7 @@ class HomeScreen extends StatelessWidget {
             // تنفيذ الانتقال للصفحة المحددة بواسطة routeName
           },
         ),
-        Divider(),
+        const Divider(),
       ],
     );
   }
@@ -113,22 +116,22 @@ class HomeScreen extends StatelessWidget {
                   child: Expanded(
                     child: _buildCard(
                       context,
-                      Color(0xFFE57373),
-                      Color(0xFFFFCDD2),
+                      const Color(0xFFE57373),
+                      const Color(0xFFFFCDD2),
                       'lib/assets/animation/p]de.json',
                       'الأحاديث النبوية',
                       '/conversation_screen',
                     ),
                   ),
                 ),
-                SizedBox(width: 16), // مسافة بين البطاقات
+                const SizedBox(width: 16), // مسافة بين البطاقات
                 Padding(
                   padding: const EdgeInsets.all(5),
                   child: Expanded(
                     child: _buildCard(
                       context,
-                      Color(0xFF81C784),
-                      Color(0xFFC8E6C9),
+                      const Color(0xFF81C784),
+                      const Color(0xFFC8E6C9),
                       'lib/assets/animation/store.json',
                       'قصص الأنبياء',
                       '/stories_screen',
@@ -138,7 +141,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 16), // مسافة بين الصفوف
+          const SizedBox(height: 16), // مسافة بين الصفوف
           Expanded(
             child: Row(
               children: [
@@ -147,22 +150,22 @@ class HomeScreen extends StatelessWidget {
                   child: Expanded(
                     child: _buildCard(
                       context,
-                      Color(0xFF64B5F6),
-                      Color(0xFFBBDEFB),
+                      const Color(0xFF64B5F6),
+                      const Color(0xFFBBDEFB),
                       'lib/assets/animation/read.json',
                       'دروس تعليمية',
                       '/tutorials_screen',
                     ),
                   ),
                 ),
-                SizedBox(width: 16), // مسافة بين البطاقات
+                const SizedBox(width: 16), // مسافة بين البطاقات
                 Padding(
                   padding: const EdgeInsets.all(5),
                   child: Expanded(
                     child: _buildCard(
                       context,
-                      Color(0xFFFFD54F),
-                      Color(0xFFFFF9C4),
+                      const Color(0xFFFFD54F),
+                      const Color(0xFFFFF9C4),
                       'lib/assets/animation/ee.json',
                       'الأذكار الاسلامية',
                       '/remembrance_screen',
@@ -184,7 +187,7 @@ class HomeScreen extends StatelessWidget {
         Navigator.pushNamed(context, routeName);
       },
       child: Container(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           border: Border.all(color: borderColor, width: 2),
           borderRadius: BorderRadius.circular(10),
@@ -193,9 +196,10 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Lottie.asset(animationPath, width: 150, height: 150),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(cardTitle,
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
           ],
         ),
       ),

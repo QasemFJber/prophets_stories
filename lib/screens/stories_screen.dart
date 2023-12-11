@@ -34,13 +34,12 @@ class _StoriesScreenState extends State<StoriesScreen> {
     Read('قصة سيدنا زكريا', 'محتوى قصة سيدنا زكريا'),
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: Text(
+        title: const Text(
           'قصص الأنبياء',
           style: TextStyle(color: Colors.white),
         ),
@@ -49,7 +48,24 @@ class _StoriesScreenState extends State<StoriesScreen> {
       body: ListView.builder(
         itemCount: stories.length,
         itemBuilder: (context, index) {
-          return _buildStoryCard(context, stories[index]);
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => DetailsScreen(stories[index])),
+              );
+            },
+            child: Card(
+              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: ListTile(
+                title: Text(stories[index].title),
+              ),
+            ),
+          );
         },
       ),
     );
@@ -64,7 +80,7 @@ class _StoriesScreenState extends State<StoriesScreen> {
         );
       },
       child: Card(
-        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),

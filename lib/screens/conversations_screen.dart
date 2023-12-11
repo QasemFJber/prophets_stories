@@ -11,25 +11,33 @@ class ConversationScreen extends StatefulWidget {
 
 class _ConversationScreenState extends State<ConversationScreen> {
   final List<Read> hadiths = [
-    Read('أبو هريرة', 'قال رسول الله صلى الله عليه وسلم: "من صام رمضان إيمانًا واحتسابًا، غفر له ما تقدم من ذنبه"'),
+    Read('أبو هريرة',
+        'قال رسول الله صلى الله عليه وسلم: "من صام رمضان إيمانًا واحتسابًا، غفر له ما تقدم من ذنبه"'),
     Read('عائشة', 'قال رسول الله صلى الله عليه وسلم: "من لا يرحم، لا يرحم"'),
-    Read('عبد الله بن عمر', 'قال رسول الله صلى الله عليه وسلم: "كانوا إذا رأوا القمر من أواخر الشهر قالوا: تغربت الحاشية، وطلعت البدر"'),
-    Read('عبد الله بن مسعود', 'قال رسول الله صلى الله عليه وسلم: "من أحب لقاء الله، أحب الله لقاءه"'),
-    Read('عبد الله بن عباس', 'قال رسول الله صلى الله عليه وسلم: "انطلقوا بذكر الله والصلاة والسلام على النبي، فإنها تؤكل ما تأكل النار الحطب"'),
-    Read('جابر بن عبد الله', 'قال رسول الله صلى الله عليه وسلم: "من لا يشكر الناس، لا يشكر الله"'),
-    Read('أبو بَكْر الصّدّيق', 'قال رسول الله صلى الله عليه وسلم: "أفضل الصّدقة عند الله صدقة السرّ"'),
-    Read('عمر بن الخطاب', 'قال رسول الله صلى الله عليه وسلم: "إنّما الأعمال بالنّيّات، وإنّما لكلّ امرئ ما نوى"'),
-    Read('عثمان بن عفّان', 'قال رسول الله صلى الله عليه وسلم: "من بنى مسجدًا يبتغي به وجه الله، بنى الله له مثله في الجنة"'),
-    Read('علي بن أبي طالب', 'قال رسول الله صلى الله عليه وسلم: "أنا مدينة العلم وعلي بابها"'),
+    Read('عبد الله بن عمر',
+        'قال رسول الله صلى الله عليه وسلم: "كانوا إذا رأوا القمر من أواخر الشهر قالوا: تغربت الحاشية، وطلعت البدر"'),
+    Read('عبد الله بن مسعود',
+        'قال رسول الله صلى الله عليه وسلم: "من أحب لقاء الله، أحب الله لقاءه"'),
+    Read('عبد الله بن عباس',
+        'قال رسول الله صلى الله عليه وسلم: "انطلقوا بذكر الله والصلاة والسلام على النبي، فإنها تؤكل ما تأكل النار الحطب"'),
+    Read('جابر بن عبد الله',
+        'قال رسول الله صلى الله عليه وسلم: "من لا يشكر الناس، لا يشكر الله"'),
+    Read('أبو بَكْر الصّدّيق',
+        'قال رسول الله صلى الله عليه وسلم: "أفضل الصّدقة عند الله صدقة السرّ"'),
+    Read('عمر بن الخطاب',
+        'قال رسول الله صلى الله عليه وسلم: "إنّما الأعمال بالنّيّات، وإنّما لكلّ امرئ ما نوى"'),
+    Read('عثمان بن عفّان',
+        'قال رسول الله صلى الله عليه وسلم: "من بنى مسجدًا يبتغي به وجه الله، بنى الله له مثله في الجنة"'),
+    Read('علي بن أبي طالب',
+        'قال رسول الله صلى الله عليه وسلم: "أنا مدينة العلم وعلي بابها"'),
   ];
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: Text(
+        title: const Text(
           'الأحاديث النبوية',
           style: TextStyle(color: Colors.white),
         ),
@@ -53,7 +61,7 @@ class _ConversationScreenState extends State<ConversationScreen> {
         );
       },
       child: Card(
-        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
@@ -64,13 +72,14 @@ class _ConversationScreenState extends State<ConversationScreen> {
             children: [
               Text(
                 hadith.title,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.right, // محاذاة النص لليمين
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
                 hadith.body,
-                style: TextStyle(fontSize: 16),
+                style: const TextStyle(fontSize: 16),
                 textAlign: TextAlign.right, // محاذاة النص لليمين
               ),
             ],
@@ -80,4 +89,3 @@ class _ConversationScreenState extends State<ConversationScreen> {
     );
   }
 }
-

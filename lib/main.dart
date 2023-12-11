@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:prophets_stories/screens/conversations_screen.dart';
-import 'package:prophets_stories/screens/details_screen.dart';
 
 import 'package:prophets_stories/screens/login_screen.dart';
 import 'package:prophets_stories/screens/pageview_screen.dart';
@@ -10,12 +9,9 @@ import 'package:prophets_stories/screens/splash_screen.dart';
 import 'package:prophets_stories/screens/stories_screen.dart';
 import 'package:prophets_stories/screens/tutorials_screen.dart';
 
-
-void main () =>runApp(MyApp());
-
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-
   const MyApp({super.key});
 
   @override
@@ -24,14 +20,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/splash_screen',
       routes: {
-        '/splash_screen' : (context) =>SplashScreen(),
-        '/login_screen' : (context) =>LoginScreen(),
-        '/register_screen' : (context) =>RegisterScreen(),
-        '/page_view_screen' : (context) =>PageViewScreen(),
-        '/conversation_screen' : (context) =>ConversationScreen(),
-        '/remembrance_screen' : (context) =>RemembranceScreen(),
-        '/stories_screen' : (context) =>StoriesScreen(),
-        '/tutorials_screen' : (context) =>TutorialScreen(),
+        '/splash_screen': (context) => const SplashScreen(),
+        '/login_screen': (context) => const LoginScreen(),
+        '/register_screen': (context) => const RegisterScreen(),
+        '/page_view_screen': (context) => const PageViewScreen(),
+        '/conversation_screen': (context) => const ConversationScreen(),
+        '/remembrance_screen': (context) => const RemembranceScreen(),
+        '/stories_screen': (context) => const StoriesScreen(),
+        '/tutorials_screen': (context) => const TutorialScreen(),
       },
     );
   }

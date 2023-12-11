@@ -10,14 +10,23 @@ class PageViewScreen extends StatefulWidget {
 }
 
 class _PageViewScreenState extends State<PageViewScreen> {
-  PageController _pageController = PageController();
+  final PageController _pageController = PageController();
   int _currentPageIndex = 0;
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ذكر و هدي',style: TextStyle(color: Colors.white),),
+        title: const Text(
+          'ذكر و هدي',
+          style: TextStyle(color: Colors.white),
+        ),
         centerTitle: true,
         backgroundColor: Colors.teal,
       ),
@@ -32,9 +41,12 @@ class _PageViewScreenState extends State<PageViewScreen> {
                 });
               },
               children: <Widget>[
-                _buildPage('lib/assets/animation/ee.json', 'استمتع بلحظات الصفاء والتأمل في ظل القرآن والسنة النبوية'),
-                _buildPage('lib/assets/animation/rr.json', 'استرخِ وتأمل في رحمة الله وعظمته في عبادتك اليومية'),
-                _buildPage('lib/assets/animation/ww.json', 'استكشف جمال التواصل مع الله من خلال الصلوات والأذكار'),
+                _buildPage('lib/assets/animation/ee.json',
+                    'استمتع بلحظات الصفاء والتأمل في ظل القرآن والسنة النبوية'),
+                _buildPage('lib/assets/animation/rr.json',
+                    'استرخِ وتأمل في رحمة الله وعظمته في عبادتك اليومية'),
+                _buildPage('lib/assets/animation/ww.json',
+                    'استكشف جمال التواصل مع الله من خلال الصلوات والأذكار'),
               ],
             ),
           ),
@@ -46,20 +58,24 @@ class _PageViewScreenState extends State<PageViewScreen> {
                 if (_currentPageIndex != 0)
                   FloatingActionButton(
                     onPressed: () {
-                      _pageController.nextPage(duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
+                      _pageController.nextPage(
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeInOut);
                     },
                     backgroundColor: Colors.teal,
-                    child: Icon(Icons.arrow_forward),
+                    child: const Icon(Icons.arrow_forward),
                   ),
                 Row(
                   children: List.generate(3, (index) {
                     return Container(
-                      margin: EdgeInsets.symmetric(horizontal: 4),
+                      margin: const EdgeInsets.symmetric(horizontal: 4),
                       width: 10,
                       height: 10,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: _currentPageIndex == index ? Colors.teal : Colors.grey,
+                        color: _currentPageIndex == index
+                            ? Colors.teal
+                            : Colors.grey,
                       ),
                     );
                   }),
@@ -67,10 +83,12 @@ class _PageViewScreenState extends State<PageViewScreen> {
                 if (_currentPageIndex != 2)
                   FloatingActionButton(
                     onPressed: () {
-                      _pageController.previousPage(duration: Duration(milliseconds: 300), curve: Curves.easeInOut);
+                      _pageController.previousPage(
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeInOut);
                     },
                     backgroundColor: Colors.teal,
-                    child: Icon(Icons.arrow_back),
+                    child: const Icon(Icons.arrow_back),
                   ),
                 if (_currentPageIndex == 2)
                   FloatingActionButton(
@@ -81,7 +99,7 @@ class _PageViewScreenState extends State<PageViewScreen> {
                       );
                     },
                     backgroundColor: Colors.teal,
-                    child: Icon(Icons.check),
+                    child: const Icon(Icons.check),
                   ),
               ],
             ),
@@ -98,8 +116,10 @@ class _PageViewScreenState extends State<PageViewScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Lottie.asset(animationPath, width: 350, height: 350),
-          SizedBox(height: 20),
-          Text(pageTitle, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold), textDirection: TextDirection.rtl),
+          const SizedBox(height: 20),
+          Text(pageTitle,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              textDirection: TextDirection.rtl),
         ],
       ),
     );
